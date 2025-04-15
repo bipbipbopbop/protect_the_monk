@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://n5iahd7y7wwq"]
+
+[ext_resource type="Texture2D" uid="uid://cywwb1vtikeie" path="res://stick.png" id="1_4k1en"]
+[ext_resource type="Script" uid="uid://bg011flhls826" path="res://scale.gd" id="1_6s6ql"]
+[ext_resource type="PackedScene" uid="uid://dgjvbi2rt7uuy" path="res://Basket.tscn" id="2_6s6ql"]
+
+[node name="Scale" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_6s6ql")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(0, 31)
+texture = ExtResource("1_4k1en")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="CharacterBody2D"]
+position = Vector2(366, 43)
+node_a = NodePath("..")
+node_b = NodePath("../../Basket")
+angular_limit_lower = 1.5708
+angular_limit_upper = 1.5708
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="CharacterBody2D"]
+position = Vector2(-359, 48)
+node_a = NodePath("..")
+node_b = NodePath("../../Basket2")
+angular_limit_lower = 1.5708
+angular_limit_upper = 1.5708
+
+[node name="Basket" parent="." instance=ExtResource("2_6s6ql")]
+position = Vector2(368, 135)
+
+[node name="Basket2" parent="." instance=ExtResource("2_6s6ql")]
+position = Vector2(-357, 139)

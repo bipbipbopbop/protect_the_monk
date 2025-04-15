@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgjvbi2rt7uuy"]
+
+[ext_resource type="Script" uid="uid://cftxhs2avfxwr" path="res://basket.gd" id="1_5cc44"]
+[ext_resource type="Texture2D" uid="uid://bu0a2s8ddol27" path="res://basket.png" id="1_cs1d8"]
+
+[node name="Basket" type="RigidBody2D"]
+center_of_mass_mode = 1
+center_of_mass = Vector2(0, 20)
+script = ExtResource("1_5cc44")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_cs1d8")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-1, -27)
+scale = Vector2(0.2, 0.2)
+polygon = PackedVector2Array(-399, 73, -271, 373, 272, 369, 399, 73)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-1, -27)
+scale = Vector2(0.2, 0.2)
+polygon = PackedVector2Array(-437, 78, -302, 407, 295, 403, 440, 81, 401, 75, 272, 370, -272, 372, -401, 75)
+one_way_collision = true
