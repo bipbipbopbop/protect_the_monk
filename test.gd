@@ -6,7 +6,6 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_leaf_timer_timeout() -> void:
-	print_debug("test")
 	# Create a new Leaf instance
 	var leaf = leaf_scene.instantiate()
 

@@ -16,19 +16,19 @@ texture = ExtResource("1_4k1en")
 [node name="PinJoint2D" type="PinJoint2D" parent="CharacterBody2D"]
 position = Vector2(366, 43)
 node_a = NodePath("..")
-node_b = NodePath("../../Basket")
+node_b = NodePath("../../LeftBasket")
 angular_limit_lower = 1.5708
 angular_limit_upper = 1.5708
 
 [node name="PinJoint2D2" type="PinJoint2D" parent="CharacterBody2D"]
 position = Vector2(-359, 48)
 node_a = NodePath("..")
-node_b = NodePath("../../Basket2")
+node_b = NodePath("../../RightBasket")
 angular_limit_lower = 1.5708
 angular_limit_upper = 1.5708
 
-[node name="Basket" parent="." instance=ExtResource("2_6s6ql")]
+[node name="LeftBasket" parent="." instance=ExtResource("2_6s6ql")]
 position = Vector2(368, 135)
 
-[node name="Basket2" parent="." instance=ExtResource("2_6s6ql")]
+[node name="RightBasket" parent="." instance=ExtResource("2_6s6ql")]
 position = Vector2(-357, 139)
