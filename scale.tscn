@@ -10,35 +10,35 @@
 script = ExtResource("1_6s6ql")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(0, 31)
+position = Vector2(0, -10)
 texture = ExtResource("1_4k1en")
 
 [node name="Button" type="Button" parent="CharacterBody2D/Sprite2D"]
-offset_left = -389.0
-offset_top = -9.0
-offset_right = 396.0
-offset_bottom = 26.0
+offset_left = -392.0
+offset_top = -5.0
+offset_right = 393.0
+offset_bottom = 30.0
 metadata/_edit_use_anchors_ = true
 
 [node name="PinJoint2D" type="PinJoint2D" parent="CharacterBody2D"]
-position = Vector2(366, 43)
+position = Vector2(366, 2)
 node_a = NodePath("..")
 node_b = NodePath("../../LeftBasket")
 angular_limit_lower = 1.5708
 angular_limit_upper = 1.5708
 
 [node name="PinJoint2D2" type="PinJoint2D" parent="CharacterBody2D"]
-position = Vector2(-359, 48)
+position = Vector2(-359, 7)
 node_a = NodePath("..")
 node_b = NodePath("../../RightBasket")
 angular_limit_lower = 1.5708
 angular_limit_upper = 1.5708
 
 [node name="LeftBasket" parent="." instance=ExtResource("2_6s6ql")]
-position = Vector2(368, 135)
+position = Vector2(368, 94)
 
 [node name="RightBasket" parent="." instance=ExtResource("2_6s6ql")]
-position = Vector2(-357, 139)
+position = Vector2(-357, 98)
 
 [connection signal="button_down" from="CharacterBody2D/Sprite2D/Button" to="CharacterBody2D" method="_on_button_button_down"]
 [connection signal="button_up" from="CharacterBody2D/Sprite2D/Button" to="CharacterBody2D" method="_on_button_button_up"]
