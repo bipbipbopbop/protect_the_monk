@@ -1,23 +1,19 @@
 extends CharacterBody2D
 
-@export var speed = 400
-@export var rotation_speed = 1.5
+@export var SPEED = 500
 
-var rotation_direction = 0
+var dragging = false
+var of = Vector2(0, 0)
 
-func get_input():
-	rotation_direction = Input.get_axis("left", "right")
-	velocity = transform.x * Input.get_axis("down", "up") * speed
-
-func _physics_process(delta):
-	get_input()
-	rotation += rotation_direction * rotation_speed * delta
-	move_and_slide()
+func _process(delta):
+	if dragging:
+		position = get_global_mouse_position() - of
 
 
-func _on_left_basket_body_entered(body: Node) -> void:
-	pass # Replace with function body.
+func _on_button_button_up() -> void:
+	dragging = false
 
 
-func _on_right_basket_body_entered(body: Node) -> void:
-	pass # Replace with function body.
+func _on_button_button_down() -> void:
+	dragging = true
+	of = get_global_mouse_position() - global_position

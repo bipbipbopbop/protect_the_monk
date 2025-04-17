@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://caur6bhsd5215"]
+[gd_scene load_steps=6 format=3 uid="uid://caur6bhsd5215"]
 
 [ext_resource type="Script" uid="uid://eqcj1baik2j2" path="res://test.gd" id="1_2au82"]
 [ext_resource type="PackedScene" uid="uid://n5iahd7y7wwq" path="res://scale.tscn" id="1_myinc"]
 [ext_resource type="PackedScene" uid="uid://bythxjw86jgcx" path="res://Leaf.tscn" id="2_njov2"]
+[ext_resource type="PackedScene" uid="uid://b65u6lwas6he2" path="res://hud.tscn" id="4_8tn2x"]
 
 [sub_resource type="Curve2D" id="Curve2D_njov2"]
 _data = {
@@ -15,10 +16,7 @@ script = ExtResource("1_2au82")
 leaf_scene = ExtResource("2_njov2")
 
 [node name="Scale" parent="." instance=ExtResource("1_myinc")]
-position = Vector2(577, 323)
-
-[node name="aLeaf" parent="." instance=ExtResource("2_njov2")]
-position = Vector2(433, 116)
+position = Vector2(578, 256)
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_njov2")
@@ -27,5 +25,7 @@ curve = SubResource("Curve2D_njov2")
 
 [node name="LeafTimer" type="Timer" parent="."]
 autostart = true
+
+[node name="HUD" parent="." instance=ExtResource("4_8tn2x")]
 
 [connection signal="timeout" from="LeafTimer" to="." method="_on_leaf_timer_timeout"]

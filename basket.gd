@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-signal leaf_entered_bucket	
+signal leaf_entered_bucket
 
 func _physics_process(delta):
 	pass
@@ -24,5 +24,5 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 
 func _on_inside_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("leafs"):
-		emit_signal("leaf_entered_bucket", body)
+		emit_signal("leaf_entered_bucket")
 		body.queue_free()
